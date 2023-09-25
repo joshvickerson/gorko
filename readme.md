@@ -64,6 +64,8 @@ This will generate utility classes based on the default configuration. To config
 This is the default configuration. It is recommended that you use it as your base for your own configuration.
 
 ```scss
+@use 'sass:math';
+
 /// BASE SIZE
 /// All calculations are based on this. It’s recommended that
 /// you keep it at 1rem because that is the root font size. You
@@ -195,9 +197,9 @@ $gorko-config: (
   'width': (
     'items': (
       'full': '100%',
-      'half': percentage(1/2),
-      'quarter': percentage(1/4),
-      'third': percentage(1/3)
+      'half': math.percentage(math.div(1,2)),
+      'quarter': math.percentage(math.div(1,4)),
+      'third': math.percentage(math.div(1,3))
     ),
     'output': 'responsive',
     'property': 'width'
